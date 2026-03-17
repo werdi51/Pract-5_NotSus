@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -184,8 +185,6 @@ namespace NotesTests
 
             IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
             Reg.Click();
-
-            Thread.Sleep(Sleep);
 
             IWebElement Error = _EdgeDriver.FindElement(By.XPath(ErrorMessageXPath));
             Assert.Equal("Пользователь с таким логином уже существует.", Error.Text);

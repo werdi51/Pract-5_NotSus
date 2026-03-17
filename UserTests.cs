@@ -29,7 +29,7 @@ namespace NotesTests
         public const string FirstNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[1]";
         public const string ThirdNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[3]";
         public const string EmptyListItemXPath = "//*[@id=\"notesList\"]/li";
-
+        public const string FirstNameListXPath = "//*[@id=\"notesList\"]/li[1]/strong";
 
         public const string LoginUser = "qwerty";
         public const string PasswordUser = "123456789";
@@ -163,6 +163,33 @@ namespace NotesTests
             var selectElement = _EdgeDriver.FindElement(By.Id(NoteScopeFilterId));
             var selectedOption = selectElement.FindElement(By.CssSelector("option:checked"));
             Assert.Equal("Общие", selectedOption.Text);
+
+        }
+
+        [Fact]
+
+        public void SelectNoteCheck()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            IWebElement input =_EdgeDriver.FindElement(By.Id(NoteTitleInputId));
+
+            IWebElement Name = _EdgeDriver.FindElement(By.XPath(FirstNameListXPath));
+
+            Assert.Equal(Name.Text, input.GetAttribute("value"));
 
         }
     }

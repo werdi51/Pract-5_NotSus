@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\desktop\\\u043E\u043A \u0444\u043A\u0441\\notestests\\loginpagestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:loginpagestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\desktop\\\u043E\u043A \u0444\u043A\u0441\\notestests\\validationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:validationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ValidationTests.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\Desktop\\\u041E\u041A \u0424\u041A\u0421\\NotesTests\\ValidationTests.cs",
+              "RelativeDocumentMoniker": "ValidationTests.cs",
+              "ToolTip": "C:\\Users\\anton\\Desktop\\\u041E\u041A \u0424\u041A\u0421\\NotesTests\\ValidationTests.cs",
+              "RelativeToolTip": "ValidationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T16:47:13.558Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,7 +49,7 @@
               "RelativeDocumentMoniker": "LogInTests.cs",
               "ToolTip": "C:\\Users\\anton\\Desktop\\\u041E\u041A \u0424\u041A\u0421\\NotesTests\\LogInTests.cs",
               "RelativeToolTip": "LogInTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAQwKsAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T16:17:43.405Z",
               "EditorCaption": ""
@@ -45,7 +62,7 @@
               "RelativeDocumentMoniker": "UserTests.cs",
               "ToolTip": "C:\\Users\\anton\\Desktop\\\u041E\u041A \u0424\u041A\u0421\\NotesTests\\UserTests.cs*",
               "RelativeToolTip": "UserTests.cs*",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAQwI0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAswL8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T16:17:42.425Z",
               "EditorCaption": ""
@@ -58,7 +75,7 @@
               "RelativeDocumentMoniker": "LoginPageStart.cs",
               "ToolTip": "C:\\Users\\anton\\Desktop\\\u041E\u041A \u0424\u041A\u0421\\NotesTests\\LoginPageStart.cs",
               "RelativeToolTip": "LoginPageStart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwIEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T16:17:05.965Z",
               "EditorCaption": ""
