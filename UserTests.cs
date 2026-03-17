@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
 
 namespace NotesTests
 {
@@ -24,10 +25,10 @@ namespace NotesTests
         public const string SaveBtnBtnId = "saveBtn";
 
         public const string ErrorMessageXPath = "//*[@id=\"message\"]/span";
-        //public const string FirstNoteItemXPath = "//*[@id=\"notesList\"]/li";
         public const string SecondNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[2]";
         public const string FirstNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[1]";
         public const string ThirdNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[3]";
+        public const string EmptyListItemXPath = "//*[@id=\"notesList\"]/li";
 
 
         public const string LoginUser = "qwerty";
@@ -106,7 +107,7 @@ namespace NotesTests
 
             Thread.Sleep(Sleep);
 
-            IWebElement List = _EdgeDriver.FindElement(By.XPath(FirstNoteItemXPath));
+            IWebElement List = _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath));
 
             Assert.Equal("Нет заметок. Создайте первую заметку.", List.Text);
         }
@@ -132,10 +133,37 @@ namespace NotesTests
             _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
 
 
-            IWebElement List = _EdgeDriver.FindElement(By.XPath(NoteScopeFilterId));
+            var selectElement = _EdgeDriver.FindElement(By.Id(NoteScopeFilterId));
+            var selectedOption = selectElement.FindElement(By.CssSelector("option:checked"));
+            Assert.Equal("Мои", selectedOption.Text);
 
-            Assert.Equal("Мои", List.Selected.ToString());
         }
+        [Fact]
 
+        public void FilterCheck2()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(ThirdNoteItemXPath)).Click();
+
+
+            var selectElement = _EdgeDriver.FindElement(By.Id(NoteScopeFilterId));
+            var selectedOption = selectElement.FindElement(By.CssSelector("option:checked"));
+            Assert.Equal("Общие", selectedOption.Text);
+
+        }
     }
 }

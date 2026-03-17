@@ -4,7 +4,7 @@ using OpenQA.Selenium.Edge;
 
 namespace NotesTests
 {
-    public class LoginPage : IDisposable
+    public class LoginPageStart : IDisposable
     {
         public IWebDriver _EdgeDriver = new EdgeDriver();
 

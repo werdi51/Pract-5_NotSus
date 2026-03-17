@@ -5569,11 +5569,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\NotesTests.csproj",
+      "projectUniqueName": "C:\\Users\\anton\\Desktop\\ОК ФКС\\NotesTests\\NotesTests.csproj",
       "projectName": "NotesTests",
-      "projectPath": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\NotesTests.csproj",
+      "projectPath": "C:\\Users\\anton\\Desktop\\ОК ФКС\\NotesTests\\NotesTests.csproj",
       "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\obj\\",
+      "outputPath": "C:\\Users\\anton\\Desktop\\ОК ФКС\\NotesTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5607,7 +5607,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -5650,7 +5650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

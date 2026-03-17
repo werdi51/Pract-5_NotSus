@@ -205,3 +205,4 @@ C:\Users\anton\OneDrive\Desktop\NeNeSys\Pract-5_NotSus\obj\Debug\net8.0\refint\N
 C:\Users\anton\OneDrive\Desktop\NeNeSys\Pract-5_NotSus\obj\Debug\net8.0\NotesTests.pdb
 C:\Users\anton\OneDrive\Desktop\NeNeSys\Pract-5_NotSus\obj\Debug\net8.0\NotesTests.genruntimeconfig.cache
 C:\Users\anton\OneDrive\Desktop\NeNeSys\Pract-5_NotSus\obj\Debug\net8.0\ref\NotesTests.dll
+C:\Users\anton\Desktop\ОК ФКС\NotesTests\obj\Debug\net8.0\NotesTests.sourcelink.json
