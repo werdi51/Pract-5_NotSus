@@ -23,6 +23,7 @@ namespace NotesTests
         public const string NoteTitleInputId = "noteTitle";
         public const string NoteContentInputId = "noteContent";
         public const string SaveBtnBtnId = "saveBtn";
+        public const string editorTitleId = "editorTitle";
 
         public const string ErrorMessageXPath = "//*[@id=\"message\"]/span";
         public const string SecondNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[2]";
@@ -30,6 +31,7 @@ namespace NotesTests
         public const string ThirdNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[3]";
         public const string EmptyListItemXPath = "//*[@id=\"notesList\"]/li";
         public const string FirstNameListXPath = "//*[@id=\"notesList\"]/li[1]/strong";
+        
 
         public const string LoginUser = "qwerty";
         public const string PasswordUser = "123456789";
@@ -190,7 +192,62 @@ namespace NotesTests
             IWebElement Name = _EdgeDriver.FindElement(By.XPath(FirstNameListXPath));
 
             Assert.Equal(Name.Text, input.GetAttribute("value"));
+        }
 
+        [Fact]
+
+        public void SelectMyNoteCheck()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+
+            IWebElement title = _EdgeDriver.FindElement(By.Id(editorTitleId));
+
+            Assert.Equal("Редактирование заметки", title.Text);
+        }
+
+        [Fact]
+        public void SelectPublicNoteCheck()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(ThirdNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            IWebElement title = _EdgeDriver.FindElement(By.Id(editorTitleId));
+
+            Assert.Equal("Совместное редактирование заметки", title.Text);
         }
     }
 }

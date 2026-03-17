@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\logintests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:logintests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\notevalidationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:notevalidationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\usertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:usertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\logintests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:logintests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|c:\\users\\anton\\onedrive\\desktop\\nenesys\\pract-5_notsus\\loginpagestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC66A09-B481-468A-8CDC-7E4243B8ABA0}|NotesTests.csproj|solutionrelative:loginpagestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,41 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LogInTests.cs",
-              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LogInTests.cs",
-              "RelativeDocumentMoniker": "LogInTests.cs",
-              "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LogInTests.cs",
-              "RelativeToolTip": "LogInTests.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAswGAAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "LoginPageStart.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LoginPageStart.cs",
+              "RelativeDocumentMoniker": "LoginPageStart.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LoginPageStart.cs",
+              "RelativeToolTip": "LoginPageStart.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T14:58:37.8Z",
+              "WhenOpened": "2026-03-17T17:23:45.046Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LogInTests.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LogInTests.cs",
+              "RelativeDocumentMoniker": "LogInTests.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LogInTests.cs",
+              "RelativeToolTip": "LogInTests.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAWwLwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T17:23:44.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserTests.cs",
               "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\UserTests.cs",
               "RelativeDocumentMoniker": "UserTests.cs",
               "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\UserTests.cs",
               "RelativeToolTip": "UserTests.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAuwIgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAqwPUAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T14:16:48.694Z",
+              "WhenOpened": "2026-03-17T17:23:44.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginPage.cs",
-              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LoginPage.cs",
-              "RelativeDocumentMoniker": "LoginPage.cs",
-              "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\LoginPage.cs",
-              "RelativeToolTip": "LoginPage.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwDcAAAAJAAAAAAAAAA==",
+              "Title": "NoteValidationTests.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\NoteValidationTests.cs",
+              "RelativeDocumentMoniker": "NoteValidationTests.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Desktop\\NeNeSys\\Pract-5_NotSus\\NoteValidationTests.cs",
+              "RelativeToolTip": "NoteValidationTests.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAmwIIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T14:13:48.609Z",
+              "WhenOpened": "2026-03-17T17:23:43.718Z",
               "EditorCaption": ""
             }
           ]

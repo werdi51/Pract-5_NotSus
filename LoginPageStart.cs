@@ -78,7 +78,7 @@ namespace NotesTests
             ChangeLog.Click();
 
             IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
-            Assert.Equal("Зарегистрироваться", Reg.Text);
+            Assert.Equal("Войти", Reg.Text);
         }
 
         [Fact]

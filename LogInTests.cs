@@ -185,6 +185,7 @@ namespace NotesTests
 
             IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
             Reg.Click();
+            Thread.Sleep(Sleep);
 
             IWebElement Error = _EdgeDriver.FindElement(By.XPath(ErrorMessageXPath));
             Assert.Equal("Пользователь с таким логином уже существует.", Error.Text);
