@@ -9,7 +9,7 @@ namespace NotesTests
     {
         public IWebDriver _EdgeDriver = new EdgeDriver();
 
-        public const int Sleep = 1000;
+        public const int Sleep = 1500;
         public const string AuthUsernameId = "authUsername";
         public const string AuthPasswordId = "authPassword";
         public const string AuthSubmitId = "authSubmit";
@@ -24,6 +24,9 @@ namespace NotesTests
         public const string NoteContentInputId = "noteContent";
         public const string SaveBtnBtnId = "saveBtn";
         public const string editorTitleId = "editorTitle";
+        public const string shareBtnId = "shareBtn";
+        public const string shareUsernameBtnId = "shareUsername";
+        public const string deleteBtnBtnId = "deleteBtn";
 
         public const string ErrorMessageXPath = "//*[@id=\"message\"]/span";
         public const string SecondNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[2]";
@@ -31,12 +34,15 @@ namespace NotesTests
         public const string ThirdNoteItemXPath = "//*[@id=\"noteScopeFilter\"]/option[3]";
         public const string EmptyListItemXPath = "//*[@id=\"notesList\"]/li";
         public const string FirstNameListXPath = "//*[@id=\"notesList\"]/li[1]/strong";
-        
+        public const string SucsessMess = "//*[@id=\"message\"]/span";
 
         public const string LoginUser = "qwerty";
         public const string PasswordUser = "123456789";
+        public const string SomeUser = "qwe123";
+        public const string EmptyUser = "";
 
-        public const string WrongInput = "zxc123";
+
+        public const string WrongInput = "```````````";
 
 
         public void Dispose()
@@ -66,6 +72,21 @@ namespace NotesTests
 
             IWebElement element = _EdgeDriver.FindElement(By.Id(elementId));
             Assert.True(element.Enabled);
+        }
+
+        [Fact]
+        public void AcsessToDeleteButton()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            _EdgeDriver.FindElement(By.Id(AuthUsernameId)).SendKeys(LoginUser);
+            _EdgeDriver.FindElement(By.Id(AuthPasswordId)).SendKeys(PasswordUser);
+            _EdgeDriver.FindElement(By.Id(AuthSubmitId)).Click();
+
+            Thread.Sleep(Sleep);
+
+            IWebElement element = _EdgeDriver.FindElement(By.Id(deleteBtnBtnId));
+            Assert.False(element.Enabled);
         }
 
         [Fact]
@@ -110,6 +131,9 @@ namespace NotesTests
             Thread.Sleep(Sleep);
 
             IWebElement List = _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath));
+
+            Thread.Sleep(Sleep);
+
 
             Assert.Equal("Нет заметок. Создайте первую заметку.", List.Text);
         }
@@ -217,10 +241,200 @@ namespace NotesTests
             Thread.Sleep(Sleep);
             _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
 
-
             IWebElement title = _EdgeDriver.FindElement(By.Id(editorTitleId));
 
             Assert.Equal("Редактирование заметки", title.Text);
+        }
+
+        [Fact]
+
+        public void AcsessCreatorEnabled()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            Thread.Sleep(Sleep);
+            IWebElement Button = _EdgeDriver.FindElement(By.Id(shareBtnId));
+
+            Assert.True(Button.Enabled);
+
+        }
+
+
+        [Fact]
+
+        public void AcsessCreatorDesable()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(ThirdNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            Thread.Sleep(Sleep);
+            IWebElement Button = _EdgeDriver.FindElement(By.Id(shareBtnId));
+
+            Assert.False(Button.Displayed);
+
+        }
+
+        [Fact]
+
+        public void AddSoCreator()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(shareUsernameBtnId)).SendKeys(SomeUser);
+
+            Thread.Sleep(Sleep);
+
+
+            _EdgeDriver.FindElement(By.Id(shareBtnId)).Click();
+
+            Thread.Sleep(Sleep);
+
+
+            IWebElement ErrorMess = _EdgeDriver.FindElement(By.XPath(SucsessMess));
+
+            Thread.Sleep(Sleep);
+
+
+            Assert.Equal("Доступ успешно выдан.", ErrorMess.Text);
+
+        }
+
+        [Fact]
+        public void AddEmptySoCreator()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(shareUsernameBtnId)).SendKeys(EmptyUser);
+
+            Thread.Sleep(Sleep);
+
+
+            _EdgeDriver.FindElement(By.Id(shareBtnId)).Click();
+
+            Thread.Sleep(Sleep);
+
+
+            IWebElement ErrorMess = _EdgeDriver.FindElement(By.XPath(SucsessMess));
+
+            Thread.Sleep(Sleep);
+
+
+            Assert.Equal("Укажите логин пользователя для совместного доступа.", ErrorMess.Text);
+
+        }
+
+        [Fact]
+        public void AddWrongSoCreator()
+        {
+            _EdgeDriver.Url = "https://test.webmx.ru/";
+
+            IWebElement Login = _EdgeDriver.FindElement(By.Id(AuthUsernameId));
+            Login.SendKeys(LoginUser);
+
+            IWebElement Password = _EdgeDriver.FindElement(By.Id(AuthPasswordId));
+            Password.SendKeys(PasswordUser);
+
+            IWebElement Reg = _EdgeDriver.FindElement(By.Id(AuthSubmitId));
+            Reg.Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(NoteScopeFilterId)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(SecondNoteItemXPath)).Click();
+            Thread.Sleep(Sleep);
+            _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
+
+            Thread.Sleep(Sleep);
+
+            _EdgeDriver.FindElement(By.Id(shareUsernameBtnId)).SendKeys(PasswordUser);
+
+            Thread.Sleep(Sleep);
+
+
+            _EdgeDriver.FindElement(By.Id(shareBtnId)).Click();
+
+            Thread.Sleep(Sleep);
+
+
+            IWebElement ErrorMess = _EdgeDriver.FindElement(By.XPath(SucsessMess));
+
+            Thread.Sleep(Sleep);
+
+
+            Assert.Equal("Пользователь не найден.", ErrorMess.Text);
+
         }
 
         [Fact]
@@ -245,9 +459,13 @@ namespace NotesTests
             Thread.Sleep(Sleep);
             _EdgeDriver.FindElement(By.XPath(EmptyListItemXPath)).Click();
 
-            IWebElement title = _EdgeDriver.FindElement(By.Id(editorTitleId));
+            IWebElement adda = _EdgeDriver.FindElement(By.Id(editorTitleId));
 
-            Assert.Equal("Совместное редактирование заметки", title.Text);
+            _EdgeDriver.FindElement(By.Id(editorTitleId)).Click();
+
+            IWebElement MESSAGE = _EdgeDriver.FindElement(By.Id(editorTitleId));
+
+            Assert.Equal("Совместное редактирование заметки", adda.Text);
         }
     }
 }
